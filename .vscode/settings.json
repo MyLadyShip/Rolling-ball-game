@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Roll a ball game.sln"
+    "dotnet.defaultSolution": "Rolling-ball-game.sln"
 }

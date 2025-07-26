@@ -847,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectiblePrefab: {fileID: 4510829265954643671}
-  numberOfCollectibles: 25
+  poolSize: 25
   spawnArea: {x: 5, y: 0.5, z: 5}
   collectibleMaterials:
   - {fileID: 2100000, guid: 87c7b9ad65dce6b42b9712c450bc50e6, type: 2}
@@ -863,6 +863,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d01e222886a387d408b7271deb300e8c, type: 2}
   - {fileID: 2100000, guid: a6cdcc3b039350c479753887c805923a, type: 2}
   - {fileID: 2100000, guid: aad29d5f8ce751548abb1d57d0e383fc, type: 2}
+  spawnDelay: 0.1
 --- !u!4 &241575075
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,11 +1292,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalCollectibles: 25
   gameTime: 100
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 789131840}
   playerController: {fileID: 842570450}
   collectibleCounter: {fileID: 1485475185}
   countdownTimer: {fileID: 1485475184}
-  collectibleSpawner: {fileID: 0}
+  collectibleSpawner: {fileID: 241575074}
   startCountdown: {fileID: 1255249343}
 --- !u!4 &286057232
 Transform:
@@ -3310,6 +3311,10 @@ MonoBehaviour:
   quitConfirmationPanel: {fileID: 526781441}
   winPanel: {fileID: 1675259131}
   losePanel: {fileID: 397320024}
+  winTimeText: {fileID: 0}
+  winRankText: {fileID: 0}
+  loseTimeText: {fileID: 0}
+  highScoreContainer: {fileID: 0}
   previousButton: {fileID: 731829037}
   startGameButton: {fileID: 1567528445}
   pauseButton: {fileID: 861516515}
@@ -3714,8 +3719,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   redBallPrefab: {fileID: 0}
   blueBallPrefab: {fileID: 0}
-  redBallMaterial: {fileID: 0}
-  blueBallMaterial: {fileID: 0}
+  redBallMaterial: {fileID: 2100000, guid: bea579181d4a05442aabc7dbe516de22, type: 2}
+  blueBallMaterial: {fileID: 2100000, guid: 7d9362d6683e10e49a293eb94c31593e, type: 2}
   moveSpeed: 20
   maxVelocity: 10
   touchDeadzone: 10
@@ -4414,7 +4419,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926547794}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91b8ba3d52e041fab2d0e0f169855539, type: 3}
   m_Name: 
@@ -6353,8 +6358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423a0c0c6a0d2a8499a2f9941f62f017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownPanel: {fileID: 0}
-  startButtonPanel: {fileID: 0}
+  countdownPanel: {fileID: 1255249342}
+  startButtonPanel: {fileID: 1567528443}
   countdownSteps:
   - 3
   - 2
@@ -7734,7 +7739,7 @@ MonoBehaviour:
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls: []
-  timerText: {fileID: 0}
+  timerText: {fileID: 187094301}
   initialTime: 100
 --- !u!114 &1485475185
 MonoBehaviour:
@@ -12101,7 +12106,7 @@ Transform:
   m_GameObject: {fileID: 1987422932}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.8, y: -0.07, z: 0}
+  m_LocalPosition: {x: -24.8, y: -0.0855, z: 2.648}
   m_LocalScale: {x: 0.40219, y: 0.46492893, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12210,6 +12215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b3153e7ab2d1f4297624eef8c0fe0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScoreTextPrefab: {fileID: 0}
+  highScoreContainer: {fileID: 0}
 --- !u!4 &1993676191
 Transform:
   m_ObjectHideFlags: 0
