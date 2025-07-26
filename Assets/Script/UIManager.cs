@@ -105,8 +105,9 @@ public class UIManager : MonoBehaviour
         panel.SetActive(true);
     }
 
-    private void OnBackButtonClicked()
+    public void OnBackButtonClicked()
     {
+        PlayButtonSound();
         if (panelHistory.Count <= 1) return;
 
         GameObject currentPanel = panelHistory.Pop();
